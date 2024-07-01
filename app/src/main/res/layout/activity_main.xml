@@ -1,0 +1,621 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/appBGColor"
+    android:baselineAligned="false"
+    android:gravity="center"
+    android:keepScreenOn="true"
+    android:orientation="vertical">
+    <!-- Joy Sticks -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="3"
+        android:background="@color/appBGColor"
+        android:baselineAligned="false"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <!-- Left Joy Stick -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="4"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/defaultValueDisplaySectionHeight"
+                android:layout_weight="1"
+                android:gravity="top"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="@dimen/defaultLabelWidth"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/defaultTextBGColor"
+                    android:gravity="end"
+                    android:paddingStart="@dimen/defaultTextPadding"
+                    android:paddingEnd="@dimen/defaultTextPadding"
+                    android:text="@string/joyStickReadingThLabel"
+                    android:textColor="@color/defaultTextFGColor" />
+
+                <TextView
+                    android:id="@+id/throttleValueView"
+                    android:layout_width="@dimen/defaultValueWidth"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/defaultTextBGColor"
+                    android:gravity="start"
+                    android:paddingStart="@dimen/defaultTextPadding"
+                    android:paddingEnd="@dimen/defaultTextPadding"
+                    android:textColor="@color/defaultTextFGColor" />
+
+                <TextView
+                    android:layout_width="@dimen/defaultLabelWidth"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/defaultTextBGColor"
+
+                    android:gravity="end"
+                    android:paddingStart="@dimen/defaultTextPadding"
+                    android:paddingEnd="@dimen/defaultTextPadding"
+                    android:text="@string/joyStickReadingYawLabel"
+                    android:textColor="@color/defaultTextFGColor" />
+
+                <TextView
+                    android:id="@+id/yawValueView"
+                    android:layout_width="@dimen/defaultValueWidth"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/defaultTextBGColor"
+                    android:gravity="start"
+                    android:paddingStart="@dimen/defaultTextPadding"
+                    android:paddingEnd="@dimen/defaultTextPadding"
+                    android:textColor="@color/defaultTextFGColor" />
+
+            </LinearLayout>
+
+            <com.brhs.tx.joystick.JoyStickView
+                android:id="@+id/throttleYawJoystickView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:contentDescription="Left Joy Stick"
+                android:hint="Left Joy Stick" />
+
+        </LinearLayout>
+
+        <!-- Switches -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="5.5"
+            android:background="@color/defaultTextBGColor"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/defaultContainerPadding"
+            android:paddingBottom="@dimen/defaultContainerPadding">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/defaultTextBGColor"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/defaultContainerPadding"
+                android:paddingBottom="@dimen/defaultContainerPadding">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/defaultTextBGColor"
+                    android:gravity="center|top"
+                    android:orientation="vertical"
+                    android:paddingStart="@dimen/defaultTextPadding">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/defaultTextBGColor"
+                        android:gravity="center|bottom"
+                        android:text="@string/connectSwitchLabel"
+                        android:textColor="@color/defaultTextFGColor" />
+
+                    <ToggleButton
+                        android:id="@+id/connectSwitch"
+                        android:layout_width="@dimen/defaultToggleButtonWidth"
+                        android:layout_height="@dimen/defaultToggleButtonHeight"
+                        android:background="@drawable/tb_custom"
+                        android:gravity="center"
+                        android:showText="true"
+                        android:textColor="@color/defaultTextFGColor"
+                        android:textOff="Off"
+                        android:textOn="On" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/defaultTextBGColor"
+                    android:gravity="center|top"
+                    android:orientation="vertical"
+                    android:paddingEnd="@dimen/defaultTextPadding">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/defaultTextBGColor"
+                        android:gravity="center|bottom"
+                        android:text="@string/signalStrengthLabel"
+                        android:textColor="@color/defaultTextFGColor" />
+
+                    <TextView
+                        android:id="@+id/connectStatusIndicatorView"
+                        android:layout_width="@dimen/defaultIndicatorWidth"
+                        android:layout_height="@dimen/defaultToggleButtonHeight"
+                        android:background="@color/indicatorInactive"
+                        android:gravity="center|center_horizontal"
+                        android:text="--"
+                        android:textColor="@color/defaultTextFGColor" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/defaultTextBGColor"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/defaultContainerPadding"
+                android:paddingBottom="@dimen/defaultContainerPadding">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/defaultTextBGColor"
+                    android:gravity="center|top"
+                    android:orientation="vertical"
+                    android:paddingStart="@dimen/defaultTextPadding" >
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/defaultTextBGColor"
+                        android:gravity="center|bottom"
+                        android:text="@string/txOnOffSwitchLabel"
+                        android:textColor="@color/defaultTextFGColor" />
+
+                    <ToggleButton
+                        android:id="@+id/txOnOffSwitch"
+                        android:layout_width="@dimen/defaultToggleButtonWidth"
+                        android:layout_height="@dimen/defaultToggleButtonHeight"
+                        android:background="@drawable/tb_custom"
+                        android:gravity="center"
+                        android:showText="true"
+                        android:textColor="@color/defaultTextFGColor"
+                        android:textOff="Off"
+                        android:textOn="On" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/defaultTextBGColor"
+                    android:gravity="center|top"
+                    android:orientation="vertical"
+                    android:paddingEnd="@dimen/defaultTextPadding">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/defaultTextBGColor"
+                        android:gravity="center|bottom"
+                        android:text="@string/fcStatusLabel"
+                        android:textColor="@color/defaultTextFGColor" />
+
+                    <TextView
+                        android:id="@+id/fcStatusIndicatorView"
+                        android:layout_width="@dimen/defaultIndicatorWidth"
+                        android:layout_height="@dimen/defaultToggleButtonHeight"
+                        android:layout_weight="1"
+                        android:background="@color/indicatorInactive"
+                        android:gravity="center|center_horizontal"
+                        android:text="--"
+                        android:textColor="@color/defaultTextFGColor" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/defaultTextBGColor"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/defaultContainerPadding"
+                android:paddingBottom="@dimen/defaultContainerPadding">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/defaultTextBGColor"
+                    android:gravity="center|top"
+                    android:orientation="vertical"
+                    android:paddingStart="@dimen/defaultTextPadding">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/defaultTextBGColor"
+                        android:gravity="center|bottom"
+                        android:text="@string/landSwitchLabel"
+                        android:textColor="@color/defaultTextFGColor" />
+
+                    <ToggleButton
+                        android:id="@+id/landSwitch"
+                        android:layout_width="@dimen/defaultToggleButtonWidth"
+                        android:layout_height="@dimen/defaultToggleButtonHeight"
+                        android:layout_weight="1"
+                        android:background="@drawable/tb_custom"
+                        android:gravity="center"
+                        android:showText="true"
+                        android:textColor="@color/defaultTextFGColor"
+                        android:textOff="Off"
+                        android:textOn="On" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/defaultTextBGColor"
+                    android:gravity="center|top"
+                    android:orientation="vertical"
+                    android:paddingEnd="@dimen/defaultTextPadding">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/defaultTextBGColor"
+                        android:gravity="center|bottom"
+                        android:text="@string/rthSwitchLabel"
+                        android:textColor="@color/defaultTextFGColor" />
+
+                    <ToggleButton
+                        android:id="@+id/rthSwitch"
+                        android:layout_width="@dimen/defaultToggleButtonWidth"
+                        android:layout_height="@dimen/defaultToggleButtonHeight"
+                        android:layout_weight="1"
+                        android:background="@drawable/tb_custom"
+                        android:gravity="center"
+                        android:showText="true"
+                        android:textColor="@color/defaultTextFGColor"
+                        android:textOff="Off"
+                        android:textOn="On" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/appQuitButton"
+                android:layout_width="@dimen/defaultActionButtonWidth"
+                android:layout_height="@dimen/defaultToggleButtonHeight"
+                android:background="@color/appBGColor"
+                android:gravity="center"
+                android:src="@mipmap/quiticon" />
+
+        </LinearLayout>
+
+        <!-- Right Joy Stick -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="4"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/defaultValueDisplaySectionHeight"
+                android:layout_weight="1"
+                android:gravity="top"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="@dimen/defaultLabelWidth"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/defaultTextBGColor"
+                    android:gravity="right"
+                    android:paddingRight="@dimen/defaultTextPadding"
+                    android:text="@string/joyStickReadingPitchLabel"
+                    android:textColor="@color/defaultTextFGColor" />
+
+                <TextView
+                    android:id="@+id/pitchValueView"
+                    android:layout_width="@dimen/defaultValueWidth"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/defaultTextBGColor"
+                    android:gravity="start"
+                    android:paddingStart="@dimen/defaultTextPadding"
+                    android:paddingEnd="@dimen/defaultTextPadding"
+                    android:textColor="@color/defaultTextFGColor" />
+
+                <TextView
+                    android:layout_width="@dimen/defaultLabelWidth"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/defaultTextBGColor"
+                    android:gravity="right"
+                    android:paddingRight="@dimen/defaultTextPadding"
+                    android:text="@string/joyStickReadingRollLabel"
+                    android:textColor="@color/defaultTextFGColor" />
+
+                <TextView
+                    android:id="@+id/rollValueView"
+                    android:layout_width="@dimen/defaultValueWidth"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/defaultTextBGColor"
+                    android:gravity="start"
+                    android:paddingStart="@dimen/defaultTextPadding"
+                    android:paddingEnd="@dimen/defaultTextPadding"
+                    android:textColor="@color/defaultTextFGColor" />
+
+            </LinearLayout>
+
+            <com.brhs.tx.joystick.JoyStickView
+                android:id="@+id/pitchRollJoystickView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:contentDescription="Right Joy Stick"
+                android:hint="Right Joy Stick" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <!-- FC Status -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_weight="1"
+        android:gravity="bottom"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="@dimen/smallLabelWidth"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/defaultTextBGColor"
+            android:gravity="end"
+            android:paddingStart="@dimen/defaultTextPadding"
+            android:paddingEnd="@dimen/defaultTextPadding"
+            android:text="@string/fcStatusPitchLabel"
+            android:textColor="@color/defaultTextFGColor" />
+
+        <TextView
+            android:id="@+id/fcStatusPitchView"
+            android:layout_width="@dimen/defaultValueWidth"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/defaultTextBGColor"
+            android:gravity="start"
+            android:paddingStart="@dimen/defaultTextPadding"
+            android:paddingEnd="@dimen/defaultTextPadding"
+            android:textColor="@color/defaultTextFGColor" />
+
+        <TextView
+            android:layout_width="@dimen/smallLabelWidth"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/defaultTextBGColor"
+            android:gravity="end"
+            android:paddingStart="@dimen/defaultTextPadding"
+            android:paddingEnd="@dimen/defaultTextPadding"
+            android:text="@string/fcStatusRollLabel"
+            android:textColor="@color/defaultTextFGColor" />
+
+        <TextView
+            android:id="@+id/fcStatusRollView"
+            android:layout_width="@dimen/defaultValueWidth"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/defaultTextBGColor"
+            android:gravity="start"
+            android:paddingStart="@dimen/defaultTextPadding"
+            android:paddingEnd="@dimen/defaultTextPadding"
+            android:textColor="@color/defaultTextFGColor" />
+
+        <TextView
+            android:layout_width="@dimen/smallLabelWidth"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/defaultTextBGColor"
+            android:gravity="end"
+            android:paddingStart="@dimen/defaultTextPadding"
+            android:paddingEnd="@dimen/defaultTextPadding"
+            android:text="@string/fcStatusYawLabel"
+            android:textColor="@color/defaultTextFGColor" />
+
+        <TextView
+            android:id="@+id/fcStatusYawView"
+            android:layout_width="@dimen/defaultValueWidth"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/defaultTextBGColor"
+            android:gravity="start"
+            android:paddingStart="@dimen/defaultTextPadding"
+            android:paddingEnd="@dimen/defaultTextPadding"
+            android:textColor="@color/defaultTextFGColor" />
+
+        <TextView
+            android:layout_width="@dimen/defaultLabelWidth"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/defaultTextBGColor"
+            android:gravity="end"
+            android:paddingStart="@dimen/defaultTextPadding"
+            android:paddingEnd="@dimen/defaultTextPadding"
+            android:text="@string/fcStatusAltLabel"
+            android:textColor="@color/defaultTextFGColor" />
+
+        <TextView
+            android:id="@+id/fcStatusAltView"
+            android:layout_width="@dimen/defaultValueWidth"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/defaultTextBGColor"
+            android:gravity="start"
+            android:paddingStart="@dimen/defaultTextPadding"
+            android:paddingEnd="@dimen/defaultTextPadding"
+            android:textColor="@color/defaultTextFGColor" />
+
+        <TextView
+            android:layout_width="@dimen/defaultLabelWidth"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/defaultTextBGColor"
+            android:gravity="end"
+            android:paddingStart="@dimen/defaultTextPadding"
+            android:paddingEnd="@dimen/defaultTextPadding"
+            android:text="@string/fcStatusVVelLabel"
+            android:textColor="@color/defaultTextFGColor" />
+
+        <TextView
+            android:id="@+id/fcStatusVVelocityView"
+            android:layout_width="@dimen/defaultValueWidth"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/defaultTextBGColor"
+            android:gravity="start"
+            android:paddingStart="@dimen/defaultTextPadding"
+            android:paddingEnd="@dimen/defaultTextPadding"
+            android:textColor="@color/defaultTextFGColor" />
+
+        <TextView
+            android:layout_width="@dimen/defaultLabelWidth"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/defaultTextBGColor"
+            android:gravity="end"
+            android:paddingStart="@dimen/defaultTextPadding"
+            android:paddingEnd="@dimen/defaultTextPadding"
+            android:text="@string/fcStatusImuFreqLabel"
+            android:textColor="@color/defaultTextFGColor" />
+
+        <TextView
+            android:id="@+id/fcStatusIMUFreqView"
+            android:layout_width="@dimen/defaultValueWidth"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/defaultTextBGColor"
+            android:gravity="start"
+            android:paddingStart="@dimen/defaultTextPadding"
+            android:paddingEnd="@dimen/defaultTextPadding"
+            android:textColor="@color/defaultTextFGColor" />
+
+        <TextView
+            android:layout_width="@dimen/defaultLabelWidth"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/defaultTextBGColor"
+            android:gravity="end"
+            android:paddingStart="@dimen/defaultTextPadding"
+            android:paddingEnd="@dimen/defaultTextPadding"
+            android:text="@string/fcStatusGyroFreqLabel"
+            android:textColor="@color/defaultTextFGColor" />
+
+        <TextView
+            android:id="@+id/fcStatusGyroFreqView"
+            android:layout_width="@dimen/defaultValueWidth"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/defaultTextBGColor"
+            android:gravity="start"
+            android:paddingStart="@dimen/defaultTextPadding"
+            android:paddingEnd="@dimen/defaultTextPadding"
+            android:textColor="@color/defaultTextFGColor" />
+
+        <TextView
+            android:layout_width="@dimen/defaultLabelWidth"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/defaultTextBGColor"
+            android:gravity="end"
+            android:paddingStart="@dimen/defaultTextPadding"
+            android:paddingEnd="@dimen/defaultTextPadding"
+            android:text="@string/fcStatusAccFreqLabel"
+            android:textColor="@color/defaultTextFGColor" />
+
+        <TextView
+            android:id="@+id/fcStatusAccFreqView"
+            android:layout_width="@dimen/defaultValueWidth"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/defaultTextBGColor"
+            android:gravity="start"
+            android:paddingStart="@dimen/defaultTextPadding"
+            android:paddingEnd="@dimen/defaultTextPadding"
+            android:textColor="@color/defaultTextFGColor" />
+    </LinearLayout>
+
+<!--
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/appBGColor"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingTop="@dimen/defaultContainerPadding"
+        android:paddingBottom="@dimen/defaultContainerPadding">
+
+        <ImageButton
+            android:id="@+id/clearLogConsoleButton"
+            android:layout_width="@dimen/defaultActionButtonWidth"
+            android:layout_height="@dimen/defaultToggleButtonHeight"
+            android:background="@color/appBGColor"
+            android:backgroundTint="@color/darkGrey"
+            android:gravity="center"
+            android:src="@mipmap/clearicon" />
+
+        <ScrollView
+            android:id="@+id/logConsoleScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:fillViewport="true"
+            android:layout_weight="9"
+            android:gravity="center"
+            android:scrollbars="vertical"
+            android:paddingTop="@dimen/defaultTextPadding"
+            android:paddingBottom="@dimen/defaultTextPadding" >
+            <TextView
+                android:id="@+id/logConsoleView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/sv_custom"
+                android:gravity="left"
+                android:text=""
+                android:paddingStart="@dimen/defaultTextPadding"
+                android:paddingEnd="@dimen/defaultTextPadding"
+                android:textColor="@color/black"
+                android:textSize="12sp" />
+        </ScrollView>
+
+
+
+    </LinearLayout>
+-->
+</LinearLayout>

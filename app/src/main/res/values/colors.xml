@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="creamWhite">#FFFDD0</color>
+    <color name="creamWhiteDark">#e1d3ae</color>
+    <color name="grey">#f4f4f3</color>
+    <color name="darkGrey">#6A6E61</color>
+    <color name="orange">#ff751a</color>
+    <color name="orangeDark">#E66A17</color>
+
+    <color name="orangeLight">#ff9933</color>
+    <color name="darkRed">#980002</color>
+    <color name="red">#ff0000</color>
+    <color name="redLight">#A82F2F</color>
+    <color name="yellow">#ffff00</color>
+    <color name="greenishYellow">#9B9B38</color>
+    <color name="darkYellow">#CCE9AB17</color>
+    <color name="blue">#0066ff</color>
+    <color name="blueLight">#95bfff</color>
+    <color name="blueGreen">#1FA1C1</color>
+
+    <color name="green">#B6FC03</color>
+    <color name="darkGreen">#CC7CC44F</color>
+    <color name="greenBlue">#B30F9568</color>
+
+    <color name="silver">#cdcbc9</color>
+    <color name="darkSilver">#a09c99</color>
+
+    <color name="violet">#666699</color>
+    <color name="violetLight">#a3a3c2</color>
+    <color name="brown">#663300</color>
+
+    <color name="appBGColor">@color/creamWhiteDark</color>
+    <color name="defaultTextBGColor">@color/creamWhiteDark</color>
+    <color name="defaultTextFGColor">@color/black</color>
+    <color name="appCTABGColor">@color/orange</color>
+    <color name="appCTAFGColor">@color/white</color>
+    <color name="appSuccessColor">@color/darkGreen</color>
+    <color name="appProcessingColor">@color/darkYellow</color>
+    <color name="appFailureColor">@color/darkRed</color>
+    <color name="appJoyStickOuterColor">@color/black</color>
+    <color name="appJoyStickInnerColor">@color/greenBlue</color>
+
+    <color name="indicatorInactive">@color/darkSilver</color>
+    <color name="indicatorActive">@color/darkYellow</color>
+    <color name="indicatorReady">@color/greenishYellow</color>
+    <color name="indicatorProcessing">@color/darkGreen</color>
+    <color name="indicatorOk">@color/green</color>
+    <color name="indicatorError">@color/darkRed</color>
+
+    <color name="indicatorNoSignal">@color/darkRed</color>
+    <color name="indicatorVeryWeakSignal">@color/redLight</color>
+    <color name="indicatorWeakSignal">@color/darkYellow</color>
+    <color name="indicatorGoodSignal">@color/greenishYellow</color>
+    <color name="indicatorVeryGoodSignal">@color/darkGreen</color>
+    <color name="indicatorExcellentSignal">@color/green</color>
+
+</resources>

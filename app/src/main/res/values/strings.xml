@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">BRHS TX</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="joyStickReadingTextStyle">normal</string>
+    <string name="joyStickReadingThLabel">Thr :</string>
+    <string name="joyStickReadingYawLabel">Yaw :</string>
+    <string name="joyStickReadingPitchLabel">Pitch :</string>
+    <string name="joyStickReadingRollLabel">Roll :</string>
+
+    <string name="connectSwitchLabel">Connect</string>
+    <string name="txOnOffSwitchLabel">On/Off</string>
+    <string name="landSwitchLabel">Land</string>
+    <string name="rthSwitchLabel">RTH</string>
+    <string name="signalStrengthLabel">RSSI</string>
+    <string name="fcStatusLabel">Fc Status</string>
+
+    <string name="fcStatusTextStyle">normal</string>
+    <string name="clearLogsButtonLabel">C</string>
+
+
+    <string name="fcStatusPitchLabel">P:</string>
+    <string name="fcStatusRollLabel">R:</string>
+    <string name="fcStatusYawLabel">Y"</string>
+    <string name="fcStatusAltLabel">Alt:</string>
+    <string name="fcStatusVVelLabel">V-Vel:</string>
+    <string name="fcStatusImuFreqLabel">Imu-F:</string>
+    <string name="fcStatusGyroFreqLabel">Gyr-F:</string>
+    <string name="fcStatusAccFreqLabel">Acc-F:</string>
+
+    <string name="wifi_name">\"brhs-wifi\"</string>
+    <string name="fc_port">8001</string>
+    <string name="fc_ip">192.168.4.1</string>
+    <string name="connection_error">Please connect to \"brhs-wifi\" and try again!</string>
+    <string name="connection_ok">Connected to \"brhs-wifi\"</string>
+
+    <string name="quitButtonLabel">Quit Application</string>
+    <string name="quitActionTitle">Quit the application?</string>
+    <string name="quitActionMessage">Are sure to quit the application?\nPlease shutdown the drone and proceed.</string>
+    <string name="quitActionPositiveMessage">Quit</string>
+    <string name="quitActionNegativeMessage">Cancel</string>
+
+
+</resources>

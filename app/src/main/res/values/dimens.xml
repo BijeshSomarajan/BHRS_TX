@@ -1,0 +1,19 @@
+<resources>
+
+    <dimen name="defaultValueDisplaySectionHeight">45dp</dimen>
+    <dimen name="defaultTextPadding">3dp</dimen>
+    <dimen name="defaultLabelWidth">62dp</dimen>
+    <dimen name="smallLabelWidth">30dp</dimen>
+    <dimen name="defaultLabelHeight">1dp</dimen>
+    <dimen name="defaultValueWidth">60dp</dimen>
+
+    <dimen name="defaultContainerPadding">4dp</dimen>
+    <dimen name="defaultInnerContainerPadding">3dp</dimen>
+    <dimen name="defaultToggleButtonWidth">50dp</dimen>
+    <dimen name="defaultActionButtonWidth">55dp</dimen>
+    <dimen name="defaultToggleButtonHeight">50dp</dimen>
+    <dimen name="defaultIndicatorHeight">2dp</dimen>
+    <dimen name="defaultIndicatorWidth">60dp</dimen>
+
+    <dimen name="switchContainerWidth">150dp</dimen>
+</resources>
